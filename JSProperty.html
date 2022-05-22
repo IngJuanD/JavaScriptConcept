@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        //Property Access
+
+        var array = [];
+        array["push"](123)
+        document.write(array[0])
+
+        var array2 = [];
+        var method = "push"
+        array[method](123)
+        document.write("<br>"+array[0]);
+
+        //instance of operator
+        var item = [];
+        var object = {};
+        function reflect(value){
+            return value
+        }
+        document.write("RESULTADO: "); document.write(item instanceof Array);//true
+        document.write("<br>RESULTADO: "); document.write(item instanceof Object);//true
+        document.write("<br>RESULTADO: "); document.write(object instanceof Array);//false
+        document.write("<br>RESULTADO: "); document.write(object instanceof Object);//true
+        document.write("<br>RESULTADO: "); document.write(reflect instanceof Array);//false
+        document.write("<br>RESULTADO: "); document.write(reflect instanceof Object);//true
+        document.write("<br>RESULTADO: "); document.write(reflect instanceof Function);//true
+
+        //Primitive Wrapper types
+        var name = "David"
+        var firstchar = name.charAt(0)
+        document.write("<br>"+firstchar)
+
+        var name = "David";
+        var temp = new String(name)
+        var firstchar = temp.charAt(0)
+        temp = null;
+        document.write("<br>"+firstchar)
+
+        var count = new Number(10);
+        var found = new Boolean(true);
+        document.write(typeof count)
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

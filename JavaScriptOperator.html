@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        //Create object
+        var object = new Object()
+        object.name = "MyObject" //Creating a name property of object
+        document.write(object.name);
+        
+        var object1 = new Object();
+        object1 = object//pointing to same memory location
+        document.write("<br>"+object1.name)
+        //Deferencing the object
+        object = null;
+
+        /*
+        Built in Ref types
+        Object :- Generic Object
+        Array :- An ordered list of numerically indexed value
+        Date :- Date and time
+        Error:- A run time error
+        Function :- a function
+        regExp :- A regular Expression
+        */
+
+        var items = new Array();
+        var now  = new Date();
+        var error = new Error("Something wrong")
+        var func = new Function(document.write("Hello for all"))
+        var re = new RegExp("\\d+")
+
+        //Literal Forms
+
+        var book = {
+            name: "<br> JavaScript",
+            Year: 2022
+        }
+        document.write(book.name)
+        document.write("<br>"+book.Year)
+
+        var book2 = new Object();
+        book2.name = "<br> OOPS in JS"
+        book2.Year = 2021
+        document.write(book2.name)
+        document.write("<br>"+book2.Year)
+
+        //Array Literal
+        var car = new Array("<br>Toyota","<br>Hyundai","<br>Audi","<br>BMW")
+        document.write(car[2])
+        var money = ["<br>Dollar","<br>Euro","<br>COP"]
+        document.write(money[1])
+
+        //Function Literals
+        function reflect(value)
+        {
+            return value;
+        }
+        document.write(reflect("<br>"+4))
+
+        var precio = new Function("value","return value")
+        document.write(precio("<br>"+5))
+        document.write("<br>"+typeof precio)
+    </script>
+    
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
