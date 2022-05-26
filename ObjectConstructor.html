@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        /*
+        Constructor: is a function that create the object with nre operator
+        Advantaje of constructor is that objects create with the same constructor will have the same properties
+        */
+
+        function person(name)
+        {
+            this.name= name;
+            this.SayHi= function()
+            {
+                document.write(this.name+"<br>")
+            }
+        }
+        var person1 = new person("David");
+        var person2 = new person("New code");
+        person1.SayHi();//David
+        person2.SayHi();//New code
+    </script>
+    
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

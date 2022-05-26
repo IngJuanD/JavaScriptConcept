@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        /*
+        this object is the calling object also solves the problem of tight coupling
+        e methods that allow you ti change the value of this object
+
+        */
+       var person1 = {
+           name: "David",
+           SayHi: function()
+           {
+               document.write(this.name);
+           }
+       }
+       person1.SayHi();
+
+
+       function SayHelloForAll(label){
+           document.write("<br>"+label + " : " +this.name)
+       }
+       var person= {
+           name: "Juan",
+           SayHis: SayHelloForAll
+       }
+       
+       var person2= {
+           name: "Cris",
+           SayHis: SayHelloForAll
+       }
+
+       var name = "Arturo"
+       person.SayHis()//JUAN
+       person2.SayHis()//CRIS
+       SayHelloForAll.call(this,"world")//gobla:someone
+       SayHelloForAll.call(person,"person1")//Peson1:Juan
+       SayHelloForAll.call(person2,"person2")//Person2:Cris
+
+       var SayHiToPerson2 = SayHelloForAll.bind(person2)
+       SayHiToPerson2("Person2")
+    </script>
+    
+    <title>Document</title>
+
+</head>
+<body>
+    
+</body>
+</html>
